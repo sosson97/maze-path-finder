@@ -1,0 +1,1 @@
+bool FindShortestPath(Maze &maze, std::vector<pos_t> &min_path);
