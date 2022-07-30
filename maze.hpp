@@ -19,6 +19,7 @@ public:
     void SetPoint(pos_t pos, int val) { _data[pos.first][pos.second] =  val; }
     int GetRowCount() { return _rowCount; }
     int GetColCount() { return _colCount; }
+    bool IsStart(pos_t pos) {return pos.first == 0 && pos.second == 0; }
     bool IsEnd(pos_t pos) { return pos.first == _rowCount-1 && pos.second == _colCount-1; }
     bool IsBlocked(pos_t pos) { return GetPoint(pos) == 1; }
     bool IsInBoundary(pos_t pos) {

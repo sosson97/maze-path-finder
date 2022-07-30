@@ -8,8 +8,8 @@
 #include <thread>
 
 int main(void) {
-    int rowCount = 10;
-    int colCount = 10;
+    int rowCount = 12;
+    int colCount = 14;
     float sparsity = 0.33;
     std::vector<pos_t> path;
 
