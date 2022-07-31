@@ -8,12 +8,12 @@
 #include <thread>
 
 int main(void) {
-    int rowCount = 12;
-    int colCount = 14;
-    float sparsity = 0.33;
+    int rowCount = 20;
+    int colCount = 20;
+    float sparsity = 0.32;
     std::vector<pos_t> path;
 
-    std::cout << "Start" << std::endl;
+    std::cout << "Start!" << std::endl;
 
     Maze maze(rowCount, colCount, sparsity);
     do {
@@ -24,6 +24,6 @@ int main(void) {
 
     do {
         maze.Render();
-        std::this_thread::sleep_for(std::chrono::milliseconds(300));
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
     } while (maze.FollowPath());
 }

@@ -15,6 +15,7 @@ public:
     }
     void Generate();
     void Render(); // print maze after cleaning the screen
+    void Render2(); // print maze after cleaning the screen
     int GetPoint(pos_t pos) { return _data[pos.first][pos.second]; }
     void SetPoint(pos_t pos, int val) { _data[pos.first][pos.second] =  val; }
     int GetRowCount() { return _rowCount; }

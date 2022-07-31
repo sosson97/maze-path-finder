@@ -4,7 +4,7 @@
 #include <random>
 #include <cassert>
 #include <time.h>
-
+#include <string>
 Maze::Maze(int rowCount, int colCount, float sparsity) {
     std::cout << "Maze generation starts" << std::endl;
 
@@ -42,25 +42,30 @@ void Maze::Generate() {
 
 
 void Maze::Render() {
+    std::string frame;
+
     system("cls");
     for (int j = 0; j < _colCount+2; j++)
-        std::cout << "--"; 
-    std::cout << std::endl; 
+        frame.append("--"); 
+    frame.append("\n");
 
     for (int i = 0; i < _rowCount; i++) {
         for (int j = -1; j < _colCount+1; j++) {
             if (j == -1 || j == _colCount)
-                std::cout << "|";
-            else
-                std::cout << (char)char_table[_data[i][j]] << " ";
+                frame.append("|");
+            else {
+                frame.push_back((char)char_table[_data[i][j]]);
+                frame.append(" ");
+            }
         }
-        std::cout << std::endl;
+        frame.append("\n");
     }
     
     for (int j = 0; j < _colCount+2; j++)
-        std::cout << "--"; 
-    std::cout << std::endl; 
- 
+        frame.append("--"); 
+    frame.append("\n");
+
+    std::cout << frame;
 }
 
 bool Maze::FollowPath() {
